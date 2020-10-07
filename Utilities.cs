@@ -13,14 +13,14 @@ namespace EmployeeManagement
 {
     public static class Utilities
     {
-        public static IConfiguration configuration { get; set; }
+        private static IConfiguration configuration { get; set; }
 
         /// <summary>
         /// Function to send Welcome email notification to the cocerned employee
         /// </summary>
         /// <param name="employeeInfo"></param>
         /// <returns></returns>
-        public static bool SendWelcomeMail(EmployeeInfoDTO employeeInfo)
+        internal static bool SendWelcomeMail(EmployeeInfoDTO employeeInfo)
         {
             return true;
         }
@@ -31,7 +31,7 @@ namespace EmployeeManagement
         /// </summary>
         /// <param name="employeeInfo"></param>
         /// <returns></returns>
-        public static bool SendDeleteNotification(EmployeeInfoDTO employeeInfo)
+        internal static bool SendDeleteNotification(EmployeeInfoDTO employeeInfo)
         {
             return true;
         }
@@ -41,7 +41,7 @@ namespace EmployeeManagement
         /// </summary>
         /// <param name="emailaddress"></param>
         /// <returns>boolean value</returns>
-        public static bool IsValidEmail(string emailaddress)
+        internal static bool IsValidEmail(string emailaddress)
         {
             try
             {
@@ -58,7 +58,7 @@ namespace EmployeeManagement
         /// Function to write logs
         /// </summary>
         /// <param name="message"></param>
-        public static void WriteLog(string message)
+        internal static void WriteLog(string message)
         {
             var logfile = configuration["LogFileName"];
             if (!string.IsNullOrEmpty(logfile))
